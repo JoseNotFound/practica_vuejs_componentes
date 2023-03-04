@@ -40,11 +40,16 @@
 
         <!-- Plantilla para el componente edit-form -->
         <script type="text/x-template" id="editForm">
-
-            <!--
-                 TODO: Componente edit-form
-            -->
-
+            <div class="card">
+              <div class="card-body">
+                <div v-for="peli in element.data">
+                  <h4 class="card-title">{{peli.prompt}}</h4>
+                  <input v-if="peli.prompt != 'Description'" type="text" v-model:text="peli.value"/>
+                  <textarea v-else type="text"  v-model:text="peli.value"> </textarea>     
+                </div>  
+              </div>
+              <a v-on:click="closeForm(element)" id="formButton" type="button" class="btn btn-danger">Cerrar</a>
+            </div>
         </script>
 
 
