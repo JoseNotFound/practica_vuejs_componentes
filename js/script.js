@@ -41,7 +41,13 @@ var server_data = {
 
 // TODO: Componente edit-form
 Vue.component('edit-form', {
-
+    template: '#editForm',
+    props: {element: Object},
+    methods: {
+        closeForm: function(itemdata){
+            itemdata.visible = true;
+        }
+    }
 })
 
 // TODO: Componente item-data
